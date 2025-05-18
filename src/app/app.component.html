@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h1 class="text-center mb-4">Saif's Notes</h1>
+  <h1 class="text-center mb-4">Saif's Notes Application</h1>
 
   <div class="mb-3">
     <input 
@@ -21,10 +21,22 @@
   </div>
 
   <div class="row mt-4">
-    <div *ngFor="let note of notes; let i = index" class="col-md-6 mb-3">
+    <div *ngFor="let note of notes; let i = index" class="col-md-4 mb-3">
       <div class="card position-relative" [ngStyle]="{ 'background-color': note.color }">
         <div class="card-body">
-          <p class="card-text">{{ note.text }}</p>
+          <!-- Edit Mode -->
+          <div *ngIf="note.isEditing; else viewMode">
+            <input [(ngModel)]="note.text" class="form-control mb-2">
+            <button class="btn btn-success btn-sm me-2" (click)="saveNote(i)">Save</button>
+          </div>
+
+          <!-- View Mode -->
+          <ng-template #viewMode>
+            <p class="card-text">{{ note.text }}</p>
+            <button class="btn btn-outline-primary btn-sm me-2" (click)="editNote(i)">Edit</button>
+          </ng-template>
+
+          <!-- Delete Button -->
           <button 
             class="btn-close position-absolute top-0 end-0 m-2"
             (click)="deleteNote(i)">

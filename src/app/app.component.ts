@@ -37,9 +37,17 @@ export class AppComponent {
     this.notes.splice(index, 1);
   }
 
+  editNote(index: number): void {
+    this.notes[index].isEditing = true;
+  }
+  
+  saveNote(index: number): void {
+    this.notes[index].isEditing = false;
+  }
 }
 
 interface Note {
   text: string;
   color: string;
+  isEditing?: boolean;
 }
