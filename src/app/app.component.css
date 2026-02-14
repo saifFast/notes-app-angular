@@ -1,0 +1,192 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #f6f8fb 0%, #eef3f9 50%);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.8rem;
+    letter-spacing: -0.01em;
+    color: #0f1724;
+    margin-bottom: 0.6rem;
+    text-align: center;
+
+    .btn-close {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(15, 23, 36, 0.06);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 120ms ease, transform 120ms ease;
+        /* keep Bootstrap's background-image close icon visible */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 0.7rem 0.7rem;
+        filter: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 36, 0.08);
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03) inset;
+    transition: box-shadow 150ms ease,
+    border-color 150ms ease;
+    background: #ffffffcc;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: rgba(59, 130, 246, 0.85);
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.06);
+}
+
+.btn {
+    padding: 0.58rem 0.9rem;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+/* Input row layout */
+.mb-3>.form-control+.btn,
+.mb-3>.btn+.form-control {
+    margin-top: 0.6rem;
+}
+
+@media (min-width: 576px) {
+    .mb-3 {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+    }
+
+    .mb-3 .form-control {
+        flex: 1 1 auto;
+        margin-bottom: 0;
+    }
+}
+
+/* Cards / notes */
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+    min-height: 120px;
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(16, 24, 40, 0.09);
+}
+
+.card-body {
+    padding: 1.25rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    font-size: 0.96rem;
+    line-height: 1.5;
+    color: rgba(2, 6, 23, 0.85);
+    word-wrap: break-word;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.btn-close {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23000' d='M.293.293a1 1 0 111.414 1.414L2.586 3.586l-.293.293 1.414 1.414.293-.293L3.414 4.414 4.707 5.707l-.293.293 1.414 1.414.293-.293L4.828 6.828l1.293 1.293-.293.293 1.414 1.414.293-.293 1.293-1.293 1.293 1.293.293.293 1.414-1.414-.293-.293-1.293-1.293.293-.293 1.414-1.414-.293.293L9.879 4.121l1.293-1.293.293.293 1.414-1.414-.293-.293L11.293 2.293 12.586.293l.293.293 1.414-1.414-.293-.293-1.293 1.293-1.293-1.293-.293.293-1.414-1.414.293.293L8 2.293 6.707 1 6.414.707 5 2.121l.293.293L4 2.707l-.293-.293L2.293 1l-.293.293L.293.293z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 16px 16px !important;
+    border: 1px solid #ddd !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 150ms ease !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.btn-close:hover {
+    background-color: #f0f0f0 !important;
+    transform: scale(1.08) !important;
+}
+
+/* Small helpers */
+.me-2 {
+    margin-right: .5rem !important;
+}
+
+/* Responsive grid tweaks */
+@media (max-width: 767px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .card {
+        min-height: 100px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Accent button styling for primary actions */
+.btn-primary {
+    background: linear-gradient(180deg, #2563eb, #1d4ed8);
+    border: none;
+    color: white;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.18);
+}
+
+.btn-outline-primary {
+    background: transparent;
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    color: rgba(15, 23, 36, 0.8);
+}
+
+/* subtle muted text class */
+.text-muted {
+    color: rgba(15, 23, 36, 0.48);
+}
+
+/* Provide consistent spacing for the top area */
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.25rem !important;
+}
